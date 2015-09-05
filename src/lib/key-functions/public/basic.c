@@ -26,6 +26,8 @@
 #define  IS_PRESSED    main_arg_is_pressed
 #define  WAS_PRESSED   main_arg_was_pressed
 
+extern uint8_t keyboard_leds;
+
 // ----------------------------------------------------------------------------
 
 /*
@@ -176,6 +178,7 @@ static void layer_toggle(uint8_t local_id) {
  *   the top of the stack, and record the id of that layer element
  */
 void kbfun_layer_push_1(void) {
+	keyboard_leds = keyboard_leds | 0x01;
 	layer_push(1);
 }
 
@@ -228,6 +231,7 @@ void kbfun_layer_sticky_1  (void) {
  *   touching any other elements)
  */
 void kbfun_layer_pop_1(void) {
+	keyboard_leds &= ~(uint8_t)0x01;
 	layer_pop(1);
 }
 
@@ -251,6 +255,7 @@ void kbfun_layer_toggle_1(void) {
  *   See the description of kbfun_layer_push_1()
  */
 void kbfun_layer_push_2(void) {
+	keyboard_leds = keyboard_leds | 0x02;
 	layer_push(2);
 }
 
@@ -273,6 +278,7 @@ void kbfun_layer_sticky_2  (void) {
  *   See the description of kbfun_layer_pop_1()
  */
 void kbfun_layer_pop_2(void) {
+	keyboard_leds &= ~(uint8_t)0x02;
 	layer_pop(2);
 }
 
