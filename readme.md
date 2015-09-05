@@ -1,3 +1,7 @@
+# VIM-like & Flipping Num Row Layout
+
+![](https://raw.githubusercontent.com/frank4565/ergodox-firmware/master/layout.png)
+
 # [Firmware][ergodox-firmware] for the [ErgoDox keyboard][]
 
 The official website is [ergodox.org] (http://www.ergodox.org).  
