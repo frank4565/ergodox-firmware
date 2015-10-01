@@ -59,6 +59,11 @@ void kbfun_control_press_release(void) {
 	kbfun_press_release();
 }
 
+void kbfun_gui_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	kbfun_press_release();
+}
+
 /*
  * [name]
  *   Two keys => capslock
